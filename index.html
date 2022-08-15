@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <div>Hasil adalah</div>
+        <br>
+        <div id="kabisat"></div>    
+        <div id="year"></div>
+    </body>
+</html>
+
+<script>
+  let tahun = new Date().getFullYear();
+  document.getElementById("year").innerHTML = tahun;
+
+  let calcTahun = tahun / 4;
+  let calcTahunsecond = tahun / 100;
+  let calcTahunthird = tahun / 400;
+  if(calcTahun.toString().split('.').length > 1){
+    document.getElementById("kabisat").innerHTML = "ini kabisat";
+  }
+
+  if(calcTahunsecond.toString().split('.').length == 1){
+    document.getElementById("kabisat").innerHTML = "ini bukan kabisat";
+  }
+
+  if(calcTahunthird.toString().split('.').length > 1){
+    document.getElementById("kabisat").innerHTML = "ini kabisat";
+  }
+  console.log(calcTahunthird.toString());
+</script>
